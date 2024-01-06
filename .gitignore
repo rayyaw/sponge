@@ -3,3 +3,6 @@ Cargo.lock
 
 # Built files
 target/
+
+# Local testing files
+sponge/
