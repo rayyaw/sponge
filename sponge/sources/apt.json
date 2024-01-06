@@ -1,0 +1,6 @@
+{
+    "bridge": "/etc/apt/sponge.so",
+    "filetypes": [
+        ".deb"
+    ]
+}
