@@ -4,4 +4,5 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-libc = "0.2.151"
+dlopen2 = "0.6.1"
+libc = "0.2.152"
