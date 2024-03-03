@@ -21,4 +21,22 @@ To install a Sponge plugin, you must compile it into a dynamically linked librar
 
 ### Our API
 
-You can find our API in the `src/api.rs` file. You must implement this API 
+You can find our API in the `src/api.rs` file. You must implement this API.
+
+### Specifically required methods
+
+1. `plugin_name: extern "C" fn () -> *const libc::c_char`
+
+This should return the name of the package manager as a C-string, like `apt` or `flatpak`.
+
+2. All methods ending in `_version`
+
+This should return an integer corresponding to the version of the API that you have implemented for that method. If you are creating a new project, you should always use the latest version of the API.
+
+### `upgrade` API
+
+todo
+
+### `install` API
+
+todo: explain all or nothing and this will only work if you're installing all packages from the same package manager

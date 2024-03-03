@@ -7,6 +7,7 @@ mod api;
 use api::PackageManagerApi;
 
 mod commands {
+    pub mod install;
     pub mod update;
 }
 
@@ -49,8 +50,9 @@ fn main() {
     };
 
     // TODO - command processing
-    // sponge install x y z (including from file, like deb or flatpak)
-    // sponge update
+    // sponge update specific
+    // FIXME - sponge install
+    // future work: list all plugins installed
     // sponge remove x y z
     // future work: support only updating specified packages
     // future work: support autoremove
@@ -58,6 +60,7 @@ fn main() {
     // future work: support search
     match args[1].as_str() {
         "update" => { commands::update::update(args[2..].to_vec(), sponge_plugins) }
+        "install" => { commands::install::bulk_install(args[2..].to_vec(), sponge_plugins) }
         _ => {
             eprintln!("Unknown command: {}. Type 'sponge' to get a list of available commands.", args[1]);
             process::exit(127);

@@ -36,7 +36,7 @@ fn update_all(plugins: Vec<Container<PackageManagerApi>>) {
             1 => {
                 plugin.upgrade_all_api_v1().expect(&format!(
                     "API Error: Could not find the upgrade all API v1 of {}!", plugin_name
-                )) 
+                ))
             }
 
             _ => { panic!(
